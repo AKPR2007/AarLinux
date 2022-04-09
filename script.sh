@@ -69,10 +69,10 @@ function TASK22 {
 function TASK33 {
 
 	echo "preparing for installation"
-yes | apt update
-yes | apt upgrade
+	yes | apt update
+	yes | apt upgrade
 	pkg install wget openssl-tool proot -y
-hash -r
+	hash -r
 	clear
 	TASK22
 
