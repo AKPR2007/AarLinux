@@ -69,7 +69,10 @@ function TASK22 {
 function TASK33 {
 
 	echo "preparing for installation"
+yes | apt update
+yes | apt upgrade
 	pkg install wget openssl-tool proot -y
+hash -r
 	clear
 	TASK22
 
@@ -77,7 +80,8 @@ function TASK33 {
 
 ##execute
 
-echo "AarLinux v1.0.1"
+clear
+echo "AarLinux v1.0.3"
 sleep 3s
 echo "checking termux version"
 if [ -n "$TERMUX_VERSION" ]; then
