@@ -1,0 +1,28 @@
+name: RootFs
+on:
+  workflow_dispatch:
+    inputs:
+      any:
+        description: 'na'
+        required: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: get
+        env:
+          ANY: ${{ github.event.inputs.any }}
+        run: |
+          sudo apt install wget
+          sudo apt install unzip
+          wget -O rootfs.zip "https://dl.dropboxusercontent.com/s/iik7i5vdznualw3/rootfs.zip?dl=0"
+          unzip rootfs.zip
+          rm rootfs.zip
+      - name: commit
+        run: |
+          git config --global user.name 'GH'
+          git config --global user.email 'git@akpr2007.github.io'
+          git add -A
+          git commit -am "get rootfs"
+          git push
