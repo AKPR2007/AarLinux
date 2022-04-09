@@ -1,0 +1,25 @@
+name: clean & format code
+on:
+  workflow_dispatch:
+    inputs:
+      filename:
+        description: 'file to be cleaned & formatted'
+        required: true
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: job
+        env:
+          FILE_NAME: ${{ github.event.inputs.filename }}
+        run: |
+          sudo snap install shfmt
+          shfmt -w $FILE_NAME
+      - name: Commit
+        run: |
+          git config --global user.name 'GH Workflow'
+          git config --global user.email 'git@akpr2007.github.io'
+          git add -A
+          git commit -am "clean & format code"
+          git push
