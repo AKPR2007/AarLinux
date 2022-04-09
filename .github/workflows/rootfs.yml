@@ -16,9 +16,11 @@ jobs:
         run: |
           sudo apt install wget
           sudo apt install unzip
-          wget -O rootfs.zip "https://dl.dropboxusercontent.com/s/iik7i5vdznualw3/rootfs.zip?dl=0"
-          unzip rootfs.zip
-          rm rootfs.zip
+          cd rootfs
+          wget -O centos.zip "https://dl.dropboxusercontent.com/s/chdodlvfiebjx2d/centos.zip?dl=0"
+          unzip centos.zip
+          rm centos.zip
+          cd ../
       - name: commit
         run: |
           git config --global user.name 'GH'
