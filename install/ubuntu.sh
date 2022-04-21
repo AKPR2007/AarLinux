@@ -33,7 +33,7 @@ if [ "$first" != 1 ]; then
 			exit 1
 			;;
 		esac
-		wget "https://raw.githubusercontent.com/AKPR2007/AarLinux/main/rootfs/ubuntu/ubuntu-rootfs-${archurl}.tar.xz" -O $tarball
+		wget "https://raw.githubusercontent.com/AKPR2007/termux-linux/main/rootfs/ubuntu/ubuntu-rootfs-${archurl}.tar.xz" -O $tarball
 	fi
 	cur=$(pwd)
 	mkdir -p "$folder"
