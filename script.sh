@@ -6,7 +6,7 @@ function TASK11 {
 	echo """
 1. Install OS
 2. Apply Patches
-3. Abort
+3. Abort/Exit
 """
 	read -p "Choose what operation to perform (1/2/3): " TASK1
 
@@ -37,25 +37,25 @@ function TASK22 {
 
 	if [ $TASK2 -eq 1 ]; then
 		echo "installing Ubuntu"
-		wget "https://raw.githubusercontent.com/AKPR2007/AarLinux/main/install/ubuntu.sh"
+		wget "https://raw.githubusercontent.com/AKPR2007/termux-linux/main/install/ubuntu.sh"
 		chmod +x ubuntu.sh
 		bash ubuntu.sh
 		rm ubuntu.sh
 	elif [ $TASK2 -eq 2 ]; then
 		echo "installing Debian"
-		wget "https://raw.githubusercontent.com/AKPR2007/AarLinux/main/install/debian.sh"
+		wget "https://raw.githubusercontent.com/AKPR2007/termux-linux/main/install/debian.sh"
 		chmod +x debian.sh
 		bash debian.sh
 		rm debian.sh
 	elif [ $TASK2 -eq 3 ]; then
 		echo "installing Kali"
-		wget "https://raw.githubusercontent.com/AKPR2007/AarLinux/main/install/kali.sh"
+		wget "https://raw.githubusercontent.com/AKPR2007/termux-linux/main/install/kali.sh"
 		chmod +x kali.sh
 		bash kali.sh
 		rm kali.sh
 	elif [ $TASK2 -eq 4 ]; then
 		echo "installing CentOS"
-		wget "https://raw.githubusercontent.com/AKPR2007/AarLinux/main/install/centos.sh"
+		wget "https://raw.githubusercontent.com/AKPR2007/termux-linux/main/install/centos.sh"
 		chmod +x centos.sh
 		bash centos.sh
 		rm centos.sh
@@ -81,7 +81,7 @@ function TASK33 {
 ##execute
 
 clear
-echo "AarLinux v1.0.3"
+echo "Termux-Linux v1.1.0"
 sleep 3s
 echo "checking termux version"
 if [ -n "$TERMUX_VERSION" ]; then
